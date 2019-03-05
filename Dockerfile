@@ -5,7 +5,7 @@ apt-get install -y software-properties-common build-essential curl git python li
 rm -rf /tmp/v8jsbuild && mkdir -p /tmp/v8jsbuild && cd /tmp/v8jsbuild && \
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git && \
 export PATH=`pwd`/depot_tools:"$PATH" &&\
-fetch v8 &&  cd v8 && git checkout 6.4.388.18 && gclient sync && \
+fetch v8 &&  cd v8 && git checkout 6.4.388.37 && gclient sync && \
 tools/dev/v8gen.py -vv x64.release -- is_component_build=true && \
 ninja -C out.gn/x64.release/ && \
 cp out.gn/x64.release/lib*.so /usr/lib/ && cp -R include/* /usr/include && \
